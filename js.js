@@ -3,7 +3,7 @@ $(document).ready(function() {
     var gameCounter = 0;
     var wins = 0;
     var losses = 0;
-    var numberToGuess = 0;
+    var numberToGuess = Math.floor((Math.random() * 121) + 19);
     
     const crystalOne = {
        button: $('#button-left'),
@@ -24,11 +24,11 @@ $(document).ready(function() {
     //FUNCTIONS
    function startGame() {
     var numberToGuess = Math.floor((Math.random() * 121) + 19);
+    crystalOne.value;
+    crystalTwo.value;
+    crystalThree.value;
     gameCounter = 0;
-    console.log(crystalOne.value);
-    console.log(crystalTwo.value);
-    console.log(crystalThree.value);
-    console.log('Number to Guess: ' + numberToGuess);
+ 
    }
 
    function counter() {
@@ -44,13 +44,17 @@ $(document).ready(function() {
         gameCounter = gameCounter + crystalThree.value;
         console.log(gameCounter);
     });
-
-    if (gameCounter == numberToGuess) {
+    console.log(crystalOne.value);
+    console.log(crystalTwo.value);
+    console.log(crystalThree.value);
+    console.log('Number to Guess: ' + numberToGuess);
+    console.log('Game Counter: ' + gameCounter)
+    if (gameCounter = numberToGuess) {
         wins ++;
         console.log('Wins: ' + wins);
         startGame();
     }
-    else {
+    else if (gameCounter > numberToGuess) {
         losses ++;
         console.log('Losses: ' + losses)
         startGame();
